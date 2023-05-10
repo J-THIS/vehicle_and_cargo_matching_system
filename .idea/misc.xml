@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/drawable/area_shape.xml" value="0.1285" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/drawable/area_shape1.xml" value="0.157" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/drawable/area_shape_without_border.xml" value="0.157" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/drawable/bottom_bar_shape.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/drawable/button_press_selector.xml" value="0.157" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/drawable/button_press_selector_right.xml" value="0.157" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/drawable/button_shape.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/drawable/button_shape1.xml" value="0.1405" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/drawable/button_shape2.xml" value="0.19" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/drawable/button_shape3.xml" value="0.1775" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/drawable/button_shape_selector.xml" value="0.19" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/drawable/button_shape_selector1.xml" value="0.2025" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/drawable/button_shape_selector2.xml" value="0.1405" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/drawable/button_shape_selector3.xml" value="0.1405" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/drawable/button_shape_selector4.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/drawable/check_box.xml" value="0.1545" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/drawable/cheek.xml" value="0.1775" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/drawable/condition_item_btn_normal.xml" value="0.1405" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/drawable/conditions_item_btn_normal.xml" value="0.1475" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/drawable/conditions_item_btn_selected.xml" value="0.1385" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/drawable/deleline.xml" value="0.1775" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/drawable/go_back_selector.xml" value="0.1385" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/drawable/ic_launcher.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/drawable/ic_launcher_round.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/drawable/line_item_selector.xml" value="0.1335" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/drawable/line_item_shape.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/drawable/shape.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/drawable/title_bar_shape.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/drawable/underline.xml" value="0.1665" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/drawable/underline1.xml" value="0.157" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/activity_add_line.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/activity_attention.xml" value="0.2109375" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/activity_change_password.xml" value="0.25364583333333335" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/activity_client_detail.xml" value="0.25364583333333335" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/activity_evaluation.xml" value="0.176" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/activity_login.xml" value="0.176" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/activity_mine.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/activity_mine_fragment.xml" value="0.2390625" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/activity_order.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/activity_order_detail.xml" value="0.2109375" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/activity_pay.xml" value="0.2046875" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/activity_register.xml" value="0.25364583333333335" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/activity_resource.xml" value="0.2390625" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/activity_resource_detail.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/activity_resource_fragment.xml" value="0.25364583333333335" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/activity_vehicle_information.xml" value="0.19953051643192488" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/bottom.xml" value="0.16" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/city_selection.xml" value="0.25364583333333335" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/city_tab.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/client_item.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/condition_item_btn_normal.xml" value="0.20726495726495728" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/dialog_attention_result.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/dialog_confirm_exit.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/dialog_removed.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/district_tab.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/evaluation_item.xml" value="0.25364583333333335" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/filter.xml" value="0.25364583333333335" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/fragment_line.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/fragment_mine.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/fragment_resource.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/line_item.xml" value="0.2526041666666667" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/order_cancel_item.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/order_evaluation_item.xml" value="0.2109375" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/order_item.xml" value="0.25364583333333335" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/order_transit_item.xml" value="0.2109375" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/order_unfilled_item.xml" value="0.25364583333333335" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/place_selection.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/province_tab.xml" value="0.15677083333333333" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/resource_item.xml" value="0.4" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/layout/title_bar.xml" value="0.128" />
+        <entry key="..\:/AndroidStudioProject/vehicle_and_cargo_matching_system/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

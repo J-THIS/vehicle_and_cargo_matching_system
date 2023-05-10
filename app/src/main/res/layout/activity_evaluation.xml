@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.EvaluationActivity"
+    android:background="@color/light_gray">
+    <include layout="@layout/title_bar"/>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp">
+
+        <Button
+            android:id="@+id/btn_good_evaluation"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_alignEnd="@+id/strut"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/tab_selector_left"
+            android:text="好评"
+            android:textColor="#FF6F00"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+        <View
+            android:id="@+id/strut"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_centerHorizontal="true"/>
+
+        <Button
+            android:id="@+id/btn_poor_evaluation"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_alignStart="@+id/strut"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/tab_selector_right"
+            android:text="差评"
+            android:textColor="#FF6F00"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/area_shape1"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:padding="20dp">
+
+        <com.example.vehicle_and_cargo_matching_system.activity.CheckBoxViewGroup
+            android:id="@+id/cvg_good_evaluation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+        <com.example.vehicle_and_cargo_matching_system.activity.CheckBoxViewGroup
+            android:id="@+id/cvg_poor_evaluation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+        <EditText
+            android:id="@+id/et_content"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="60dp"
+            android:background="@drawable/area_shape"
+            android:gravity="top"
+            android:hint="评论其他内容"
+            android:textColorHint="@color/gray"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/button_shape_selector"
+            android:text="提交"
+            android:textColor="@color/white"
+            android:textSize="17sp" />
+    </RelativeLayout>
+</LinearLayout>

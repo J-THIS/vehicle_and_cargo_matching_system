@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:visibility="gone"
+    android:id="@+id/ll_district_tab">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_province2"
+            android:text="福建 >"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/tv_province2"
+            android:id="@+id/tv_city"
+            android:text="厦门 >"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/tv_city"
+            android:text="请选择区"
+            android:textColor="@color/orange"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"/>
+        <TextView
+            android:id="@+id/tv_back2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="上一级"
+            android:textColor="@color/ic_launcher_background"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+    <com.example.vehicle_and_cargo_matching_system.activity.ConditionViewGroup
+        android:id="@+id/cvg_district"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </com.example.vehicle_and_cargo_matching_system.activity.ConditionViewGroup>
+</LinearLayout>

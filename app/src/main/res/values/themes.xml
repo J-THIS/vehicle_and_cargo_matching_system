@@ -1,0 +1,34 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Vehicle_and_cargo_matching_system" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Dialog_Style" parent="Theme.AppCompat.Dialog">
+        <!--设置界面无标题栏-->
+        <item name="android:windowIsFloating">true</item> <!--对话框浮在Activity之上-->
+        <item name="android:windowIsTranslucent">true</item> <!--设置对话框背景为透明-->
+        <item name="android:windowNoTitle">true</item> <!--设置界面无标题-->
+        <item name="android:windowBackground">@android:color/transparent</item> <!--设置对话框内容背景为透明-->
+        <item name="android:backgroundDimEnabled">true</item><!--设置对话框背景有半透明遮罩-->
+    </style>
+
+    <style name="Result_Dialog_Style" parent="Theme.AppCompat.Dialog">
+        <!--设置界面无标题栏-->
+        <item name="android:windowIsFloating">true</item> <!--对话框浮在Activity之上-->
+        <item name="android:windowIsTranslucent">true</item> <!--设置对话框背景为透明-->
+        <item name="android:windowNoTitle">true</item> <!--设置界面无标题-->
+        <item name="android:windowBackground">@android:color/transparent</item> <!--设置对话框内容背景为透明-->
+    </style>
+
+</resources>

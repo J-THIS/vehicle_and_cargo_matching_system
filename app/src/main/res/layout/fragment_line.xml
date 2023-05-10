@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:orientation="vertical"
+        android:background="@drawable/area_shape"
+        android:layout_margin="10dp">
+        <Button
+            android:id="@+id/btn_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="点击刷新关注线路列表"
+            android:textColor="@color/orange"
+            android:textSize="17sp"
+            android:background="@drawable/button_shape_selector4"/>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:scrollbars="none"
+            android:layout_margin="10dp">
+            <com.example.vehicle_and_cargo_matching_system.view.LineListView
+                android:id="@+id/llv_line"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </ScrollView>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/add_line_btn"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_margin="10dp"
+        android:text="添加关注线路"
+        android:textSize="20dp"
+        android:textColor="@color/blue_color"
+        android:background="@drawable/button_shape1"/>
+
+</LinearLayout>

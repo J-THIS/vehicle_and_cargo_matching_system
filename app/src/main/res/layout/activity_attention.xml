@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/light_gray"
+    tools:context=".activity.AttentionActivity">
+
+    <include layout="@layout/title_bar"/>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp">
+
+        <Button
+            android:id="@+id/btn_resource"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_alignEnd="@+id/strut"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/tab_selector_left"
+            android:text="关注货源"
+            android:textColor="#FF6F00"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+        <View
+            android:id="@+id/strut"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_centerHorizontal="true"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_alignStart="@+id/strut"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/btn_client"
+            android:background="@drawable/tab_selector_right"
+            android:textColor="#FF6F00"
+            android:text="关注货主"
+            android:textStyle="bold"
+            android:textSize="17sp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/area_shape1"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp">
+
+        <ScrollView
+            android:id="@+id/sv_resource"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@android:color/white"
+            android:scrollbars="none"
+            android:visibility="gone">
+            <com.example.vehicle_and_cargo_matching_system.view.ResourceListView
+                android:id="@+id/rlv_attention"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </ScrollView>
+        <ScrollView
+            android:id="@+id/sv_client"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@android:color/white"
+            android:scrollbars="none"
+            android:visibility="gone">
+            <com.example.vehicle_and_cargo_matching_system.view.ClientListView
+                android:id="@+id/clv_attention"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/btn_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/button_shape_selector4"
+            android:text="点击刷新关注列表"
+            android:textColor="@color/orange"
+            android:textSize="17sp" />
+    </RelativeLayout>
+
+</LinearLayout>
