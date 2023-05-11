@@ -35,6 +35,10 @@ import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.baidu.location.BDAbstractLocationListener;
+import com.baidu.location.BDLocation;
+import com.baidu.location.LocationClient;
+import com.baidu.location.LocationClientOption;
 import com.example.vehicle_and_cargo_matching_system.R;
 import com.example.vehicle_and_cargo_matching_system.bean.Driver;
 import com.example.vehicle_and_cargo_matching_system.bean.LineAttention;
@@ -42,6 +46,7 @@ import com.example.vehicle_and_cargo_matching_system.fragment.LineFragment;
 import com.example.vehicle_and_cargo_matching_system.fragment.MineFragment;
 import com.example.vehicle_and_cargo_matching_system.fragment.ResourceFragment;
 import com.example.vehicle_and_cargo_matching_system.util.ActivityStackUtil;
+
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -75,7 +80,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView tv_back,tv_title; //返回键和标题控件
     private long exitTime; //记录点击事件
 
-    private int frag;
     FragmentManager fm;
 
     private Driver driver;
@@ -84,11 +88,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Double longitude, latitude;//经纬度信息
     private String mPosition = null;//用户当前所在位置地名
     private String mRegion = null;//用户当前所在地区地名
-    private LocationManager locationManager;
-    private String locationProvider;
     private static String AK = "IDPp1BRd0WEmkon5y38jIskMmMRyk9MR";//百度地图api密钥
     FutureTask<String> futureTask;
     private ExecutorService executorService;
+
+    public LocationClient mLocationClient = null;
+    private MyLocationListener myListener = new MyLocationListener();
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -96,7 +101,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         ActivityStackUtil.getAppManager().addActivity(this);
         initData();
-        getLocation();
+        try {
+            initLocation();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         initViews();//初始化控件
         initFragment();//初始化碎片
         initEvents();//初始化事件
@@ -232,34 +241,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return super.onKeyDown(keyCode, event);
     }
 
-    private LocationListener locationListener = new LocationListener() {
-        // Provider的状态在可用、暂时不可用和无服务三个状态直接切换时触发此函数
-        @Override
-        public void onStatusChanged(String provider, int status, Bundle extras) {
-        }
-
-        // Provider被enable时触发此函数，比如GPS被打开
-        @Override
-        public void onProviderEnabled(String provider) {
-        }
-
-        // Provider被disable时触发此函数，比如GPS被关闭
-        @Override
-        public void onProviderDisabled(String provider) {
-        }
-
-        //当坐标改变时触发此函数，如果Provider传进相同的坐标，它就不会被触发
-        @Override
-        public void onLocationChanged(Location location) {
-            if (location != null) {
-                longitude = location.getLongitude();
-                latitude = location.getLatitude();
-//                Toast.makeText(MainActivity.this, "longitude:"+longitude+"latitude:"+latitude, Toast.LENGTH_LONG).show();
-                Log.i("longitude:", longitude + "");
-                Log.i("latitude:", latitude + "");
-            }
-        }
-    };
+//    private LocationListener locationListener = new LocationListener() {
+//        // Provider的状态在可用、暂时不可用和无服务三个状态直接切换时触发此函数
+//        @Override
+//        public void onStatusChanged(String provider, int status, Bundle extras) {
+//        }
+//
+//        // Provider被enable时触发此函数，比如GPS被打开
+//        @Override
+//        public void onProviderEnabled(String provider) {
+//        }
+//
+//        // Provider被disable时触发此函数，比如GPS被关闭
+//        @Override
+//        public void onProviderDisabled(String provider) {
+//        }
+//
+//        //当坐标改变时触发此函数，如果Provider传进相同的坐标，它就不会被触发
+//        @Override
+//        public void onLocationChanged(Location location) {
+//            if (location != null) {
+//                longitude = location.getLongitude();
+//                latitude = location.getLatitude();
+////                Toast.makeText(MainActivity.this, "longitude:"+longitude+"latitude:"+latitude, Toast.LENGTH_LONG).show();
+//                Log.i("longitude:", longitude + "");
+//                Log.i("latitude:", latitude + "");
+//            }
+//        }
+//    };
 
     private void checkPermission(){
         //检查并申请权限
@@ -273,46 +282,93 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    public void getLocation() {
+    public void initLocation() throws Exception {
         checkPermission();
-        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        //获取所有可用的位置提供器
-        List providers = locationManager.getProviders(true);
-        if (providers.contains(LocationManager.NETWORK_PROVIDER)) {
-            //如果是Network
-            locationProvider = LocationManager.NETWORK_PROVIDER;
-        } else if (providers.contains(LocationManager.GPS_PROVIDER)) {
-            //如果是GPS
-            locationProvider = LocationManager.GPS_PROVIDER;
-        } else {
-            //如果是Passive
-            locationProvider = LocationManager.PASSIVE_PROVIDER;
-        }
-        //获取最新的定位信息
-        Location location = locationManager.getLastKnownLocation(locationProvider);
-        //位置监听器实现每隔3s更新一次位置信息
-        locationManager.requestLocationUpdates(
-                locationProvider,//指定GPS定位的提供者
-                3000,//间隔时间
-                1,//位置更新之间的最小距离
-                locationListener//监听定位信息是否改变
-        );
-        //为avd上运行临时设定
-//        longitude = 116.40441;
-//        latitude = 39.907411;
-        longitude = 118.813091;
-        latitude = 31.88551;
+//        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+//        //获取所有可用的位置提供器
+//        List providers = locationManager.getProviders(true);
+//        if (providers.contains(LocationManager.NETWORK_PROVIDER)) {
+//            //如果是Network
+//            locationProvider = LocationManager.NETWORK_PROVIDER;
+//        } else if (providers.contains(LocationManager.GPS_PROVIDER)) {
+//            //如果是GPS
+//            locationProvider = LocationManager.GPS_PROVIDER;
+//        } else {
+//            //如果是Passive
+//            locationProvider = LocationManager.PASSIVE_PROVIDER;
+//        }
+//        //获取最新的定位信息
+//        Location location = locationManager.getLastKnownLocation(locationProvider);
+//        //位置监听器实现每隔3s更新一次位置信息
+//        locationManager.requestLocationUpdates(
+//                locationProvider,//指定GPS定位的提供者
+//                3000,//间隔时间
+//                1,//位置更新之间的最小距离
+//                locationListener//监听定位信息是否改变
+//        );
+//        //为avd上运行临时设定
+////        longitude = 116.40441;
+////        latitude = 39.907411;
+//        longitude = 118.813091;
+//        latitude = 31.88551;
+
+        LocationClient.setAgreePrivacy(true);
+        //声明LocationClient类
+        mLocationClient = new LocationClient(getApplicationContext());
+        //注册监听函数
+        mLocationClient.registerLocationListener(myListener);
+
+        LocationClientOption option = new LocationClientOption();
+
+        option.setLocationMode(LocationClientOption.LocationMode.Hight_Accuracy);
+        //可选，设置定位模式，默认高精度
+        //LocationMode.Hight_Accuracy：高精度；
+        //LocationMode. Battery_Saving：低功耗；
+        //LocationMode. Device_Sensors：仅使用设备；
+        //LocationMode.Fuzzy_Locating, 模糊定位模式；v9.2.8版本开始支持，可以降低API的调用频率，但同时也会降低定位精度；
+
+        option.setCoorType("bd09ll");
+        //可选，设置返回经纬度坐标类型，默认GCJ02
+        //GCJ02：国测局坐标；
+        //BD09ll：百度经纬度坐标；
+        //BD09：百度墨卡托坐标；
+        //海外地区定位，无需设置坐标类型，统一返回WGS84类型坐标
+
+        option.setFirstLocType(LocationClientOption.FirstLocType.SPEED_IN_FIRST_LOC);
+        //可选，首次定位时可以选择定位的返回是准确性优先还是速度优先，默认为速度优先
+        //可以搭配setOnceLocation(Boolean isOnceLocation)单次定位接口使用，当设置为单次定位时，setFirstLocType接口中设置的类型即为单次定位使用的类型
+        //FirstLocType.SPEED_IN_FIRST_LOC:速度优先，首次定位时会降低定位准确性，提升定位速度；
+        //FirstLocType.ACCUARACY_IN_FIRST_LOC:准确性优先，首次定位时会降低速度，提升定位准确性；
+
+        option.setScanSpan(0);
+        //可选，设置发起定位请求的间隔，int类型，单位ms
+        //如果设置为0，则代表单次定位，即仅定位一次，默认为0
+        //如果设置非0，需设置1000ms以上才有效
+        mLocationClient.setLocOption(option);
+        mLocationClient.start();
+    }
+
+    public void getLocation(Double latitude, Double longitude){
+        Toast.makeText(MainActivity.this, "longitude:"+longitude+"latitude:"+latitude, Toast.LENGTH_LONG).show();
 
         @SuppressLint("HandlerLeak") final Handler handler = new Handler(){
             @Override
             public void handleMessage(@NonNull Message msg) {
                 super.handleMessage(msg);
                 if (msg.what == 2){
-                    String[] str_message = msg.obj.toString().split("/");
-                    mPosition = str_message[0];
-                    Log.i("mPosition", mPosition);
-                    mRegion = str_message[1];
-                    Log.i("mRegion", mRegion);
+                    if (msg.obj.toString().equals("/")){
+                        Toast.makeText(MainActivity.this,"获取用户位置失败！",Toast.LENGTH_LONG).show();
+                        mPosition = "全国";
+                        Log.i("mPosition", mPosition);
+                        mRegion = "全国";
+                        Log.i("mRegion", mRegion);
+                    }else{
+                        String[] str_message = msg.obj.toString().split("/");
+                        mPosition = str_message[0];
+                        Log.i("mPosition", mPosition);
+                        mRegion = str_message[1];
+                        Log.i("mRegion", mRegion);
+                    }
                     resource_tab.initLocation(mPosition,mRegion);
                     line_tab.initLocation(mPosition,mRegion);
                     mine_tab.initLocation(mPosition,mRegion);
@@ -373,28 +429,49 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         executorService.execute(futureTask);
     }
 
+    public class MyLocationListener extends BDAbstractLocationListener {
+        @Override
+        public void onReceiveLocation(BDLocation location){
+            //此处的BDLocation为定位结果信息类，通过它的各种get方法可获取定位相关的全部结果
+            //以下只列举部分获取经纬度相关（常用）的结果信息
+            //更多结果信息获取说明，请参照类参考中BDLocation类中的说明
+
+            double latitude = location.getLatitude();    //获取纬度信息
+            double longitude = location.getLongitude();    //获取经度信息
+            float radius = location.getRadius();    //获取定位精度，默认值为0.0f
+
+            String coorType = location.getCoorType();
+            //获取经纬度坐标类型，以LocationClientOption中设置过的坐标类型为准
+
+            int errorCode = location.getLocType();
+            Toast.makeText(MainActivity.this, "error:"+errorCode, Toast.LENGTH_LONG).show();
+            //获取定位类型、定位错误返回码，具体信息可参照类参考中BDLocation类中的说明
+            getLocation(latitude,longitude);
+        }
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
-        checkPermission();
-        locationManager.requestLocationUpdates(
-                locationProvider,//指定GPS定位的提供者
-                3000,//间隔时间
-                1,//位置更新之间的最小距离
-                locationListener//监听定位信息是否改变
-        );
+//        checkPermission();
+//        locationManager.requestLocationUpdates(
+//                locationProvider,//指定GPS定位的提供者
+//                3000,//间隔时间
+//                1,//位置更新之间的最小距离
+//                locationListener//监听定位信息是否改变
+//        );
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        checkPermission();
-        locationManager.requestLocationUpdates(
-                locationProvider,//指定GPS定位的提供者
-                3000,//间隔时间
-                1,//位置更新之间的最小距离
-                locationListener//监听定位信息是否改变
-        );
+//        checkPermission();
+//        locationManager.requestLocationUpdates(
+//                locationProvider,//指定GPS定位的提供者
+//                3000,//间隔时间
+//                1,//位置更新之间的最小距离
+//                locationListener//监听定位信息是否改变
+//        );
     }
 
 

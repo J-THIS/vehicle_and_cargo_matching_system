@@ -69,6 +69,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote"/>
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="Cs3ABXbQeRTGTxgk31iSmj9hMwFQnoLI" />
     </application>
 
 </manifest>

@@ -440,6 +440,10 @@ public class ResourceFragment extends Fragment{
     直辖市示例为“北京市北京市东城区”*/
     private String get_region(String load_region){
         String str_load_region = "";
+        if (load_region.contains("全国")){
+            str_load_region = "全国";
+            return str_load_region;
+        }
         if (load_region.contains("省")){//处理一般省级行政区
             str_load_region = load_region.split("省")[1];
         }else if (load_region.contains("自治区")){//处理自治区
